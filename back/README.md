@@ -10,11 +10,30 @@ _This api allows to get data from the empire._
 4. Launch the API `npm start`
 5. Access `http://STAR_WARS_API_HOST:STAR_WARS_API_PORT`
 
+## Endpoints
+
+All endpoints start with `http://STAR_WARS_API_HOST:STAR_WARS_API_PORT`
+
+| Url | Parameter/Query | Type | Required |Description |
+| :-----| :--- | :--- | :--- |:---- |
+| `/search`| `?search=` | `string` | true | Allows you to search anywhere on the empire's database |
+
+
+## Status Codes
+
+| Status Code | Description |
+| :--- | :--- |
+| 200 | `OK` |
+| 201 | `CREATED` |
+| 400 | `BAD REQUEST` |
+| 404 | `NOT FOUND` |
+| 500 | `INTERNAL SERVER ERROR` |
 
 ## Environement variables
 
 - STAR_WARS_API_PORT
 - STAR_WARS_API_HOST
+- SWAPI_API_URL
 
 ## Dependencies
 
@@ -23,3 +42,4 @@ _This api allows to get data from the empire._
 * [Hapi](https://hapi.dev/)
 * [Axios](https://www.npmjs.com/package/axios)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
+* [Swapi](https://swapi.dev/documentation)
