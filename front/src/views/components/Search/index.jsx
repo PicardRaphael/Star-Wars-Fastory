@@ -1,7 +1,6 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import { v4 as uuidv4 } from "uuid";
+import { FixedSizeList } from "react-window";
 
 import InputSearch from "../../../components/InputSearch";
 import styles from "./Search.module.css";
@@ -33,11 +32,16 @@ const Search = ({ searchValue, setSearchValue, loading, result }) => {
           </Typography>
         )}
         {result !== null && result.length > 0 && (
-          <List className={styles.list}>
-            {result.map((item) => (
-              <ResultItem key={uuidv4()} result={item} />
-            ))}
-          </List>
+          <FixedSizeList
+            height={600}
+            width={360}
+            itemSize={46}
+            itemCount={result.length}
+            overscanCount={10}
+            itemData={result}
+          >
+            {ResultItem}
+          </FixedSizeList>
         )}
       </Box>
     </Box>

@@ -8,3 +8,23 @@ body {
 p, h6 {
     color: var(--main-white);
 }
+/* width */
+::-webkit-scrollbar {
+  width: 0.625rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--main-grey);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border: 0.063rem solid var(--main-blue);
+  background: var(--main-dark);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-blue);
+}

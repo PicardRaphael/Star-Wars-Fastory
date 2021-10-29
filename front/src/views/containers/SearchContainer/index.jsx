@@ -27,11 +27,10 @@ const SearchContainer = () => {
       setLoading(true);
     } else if (isSuccess) {
       setLoading(false);
-      setResult(data.data);
+      setResult(data);
       setSkip(true);
     }
   }, [data, isFetching, isSuccess]);
-
   return (
     <Search
       searchValue={searchValue}
