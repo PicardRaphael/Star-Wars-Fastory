@@ -7,7 +7,14 @@ export const apiSlice = createApi({
     searchAnywhere: builder.query({
       query: (value) => `/search?search=${value}`,
     }),
+    detail: builder.query({
+      query: (body) => ({
+        url: `/detail`,
+        method: "POST",
+        body,
+      }),
+    }),
   }),
 });
 
-export const { useSearchAnywhereQuery } = apiSlice;
+export const { useSearchAnywhereQuery, useDetailQuery } = apiSlice;
