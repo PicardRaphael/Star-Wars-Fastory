@@ -2,11 +2,6 @@ const routes = [
   {
     path: "/",
     exact: true,
-    key: "home",
-    component: "Home",
-  },
-  {
-    path: "/search",
     key: "search",
     component: "Search",
   },
