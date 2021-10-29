@@ -1,0 +1,19 @@
+
+.divGlobal {
+    display: flex;
+    justify-content: center;
+}
+.logo {
+    color: var(--main-blue);
+}
+.divInput {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--main-blue);
+    border-radius: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.input {
+    color: var(--main-yellow);  
+}
