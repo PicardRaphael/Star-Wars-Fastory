@@ -9,10 +9,13 @@ const searchAnywhere = async (search) => {
         callSwapiApi(url + "?search=" + search)
           .then((response) => {
             if (response.results.length > 0) {
-              resolve({
-                type: type,
-                data: response.results,
-              });
+              response.results.map((result) =>
+                resolve({
+                  type: type,
+                  name: result.name || result.title,
+                  url: result.url,
+                })
+              );
             } else {
               resolve(null);
             }
