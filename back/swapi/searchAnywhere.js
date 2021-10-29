@@ -9,13 +9,15 @@ const searchAnywhere = async (search) => {
         callSwapiApi(url + "?search=" + search)
           .then((response) => {
             if (response.results.length > 0) {
+              const data = [];
               response.results.map((result) =>
-                resolve({
+                data.push({
                   type: type,
                   name: result.name || result.title,
                   url: result.url,
                 })
               );
+              resolve(data);
             } else {
               resolve(null);
             }
@@ -30,7 +32,11 @@ const searchAnywhere = async (search) => {
     }
 
     return Promise.all(promises)
-      .then((data) => data.filter((value) => value != null))
+      .then((data) =>
+        data
+          .filter((value) => value != null)
+          .reduce((acc, currentA) => acc.concat(currentA))
+      )
       .catch((err) => {
         console.log("Erreur :" + err);
       });

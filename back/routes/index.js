@@ -10,7 +10,7 @@ const routes = [
         throw Boom.badRequest("Search query can't be empty");
       }
       let result = await searchAnywhere(request.query.search);
-      return h.response({ msg: "Fetch success", data: result }).code(200);
+      return h.response(result).code(200);
     },
   },
 ];
