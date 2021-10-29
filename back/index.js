@@ -6,6 +6,9 @@ const init = async () => {
   const server = Hapi.server({
     port: process.env.STAR_WARS_API_PORT,
     host: process.env.STAR_WARS_API_HOST,
+    routes: {
+      cors: true,
+    },
   });
   server.route(routes);
   try {
