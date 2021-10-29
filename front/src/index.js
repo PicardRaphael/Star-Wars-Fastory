@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import { StyledEngineProvider } from "@mui/material/styles";
 
 import AppContainer from "./AppContainer";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AppContainer />
-    </BrowserRouter>
+    <StyledEngineProvider injectFirst>
+        <BrowserRouter>
+          <AppContainer />
+        </BrowserRouter>
+    </StyledEngineProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
