@@ -1,0 +1,10 @@
+body {
+    background: var(--main-dark)
+    url('../assets/images/stars.png') repeat top
+    center;
+  z-index: 0;
+}
+
+p, h6 {
+    color: var(--main-white);
+}
