@@ -12,3 +12,4 @@ git clone https://github.com/PicardRaphael/Star-Wars-Fastory.git
 This application is based on components :
 
 - Star Wars Backend API : [doc](back/README.md)
+- Star Wars Frontend : [doc](front/README.md)
