@@ -1,0 +1,11 @@
+.searchGlobal {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.divInput {
+    margin-bottom: 2rem;
+}
+.list {
+    padding: 0
+}
