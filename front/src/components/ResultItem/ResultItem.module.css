@@ -1,0 +1,14 @@
+.text {
+    color: var(--main-yellow);
+    margin: 0;
+}
+.text span {
+    font-size: 1.125rem;
+}
+.link {
+    text-decoration: none;
+}
+
+.link:hover .text {
+    color: var(--main-green);
+}
