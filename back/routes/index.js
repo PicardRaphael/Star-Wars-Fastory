@@ -16,15 +16,15 @@ const routes = [
   },
   {
     method: "POST",
-    path: "/detail",
-    options: {
-      payload: {
-        defaultContentType: "application/json",
-      },
-    },
+    path: "/detail/{type}/{name}",
     handler: async (request, h) => {
-      let result = await callSwapiApi(request.payload.url);
-      return h.response(result).code(200);
+      const url =
+        process.env.SWAPI_API_URL +
+        request.params.type +
+        "?search=" +
+        request.params.name;
+      let { results } = await callSwapiApi(url);
+      return h.response(results).code(200);
     },
   },
 ];
