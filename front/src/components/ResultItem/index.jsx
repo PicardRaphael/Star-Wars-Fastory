@@ -11,7 +11,7 @@ const ResultItem = ({ index, data, style }) => (
   <ListItem component="div" key={index} className={styles.item} style={style}>
     <Link
       className={styles.link}
-      to={{ pathname: `/detail/${data[index].name}`, query: data[index] }}
+      to={`/detail/${data[index].type}/${data[index].name}`}
     >
       <ListItemText className={styles.text}>{data[index].name}</ListItemText>
     </Link>
@@ -22,6 +22,7 @@ ResultItem.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
   index: PropTypes.number.isRequired,
