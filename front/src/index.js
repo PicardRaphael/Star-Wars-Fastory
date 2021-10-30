@@ -7,12 +7,14 @@ import store from "./store";
 
 import AppContainer from "./AppContainer";
 import reportWebVitals from "./reportWebVitals";
+import Header from "./components/Header";
 
 ReactDOM.render(
   <React.StrictMode>
     <StyledEngineProvider injectFirst>
       <Provider store={store}>
         <BrowserRouter>
+          <Header />
           <AppContainer />
         </BrowserRouter>
       </Provider>
