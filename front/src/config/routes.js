@@ -6,7 +6,7 @@ const routes = [
     component: "Search",
   },
   {
-    path: "/detail",
+    path: "/detail/:type/:name",
     key: "detail",
     component: "Detail",
   },
