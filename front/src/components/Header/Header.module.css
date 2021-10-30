@@ -5,3 +5,16 @@
     font-size: 1.25rem;
     font-weight: 700;
 }
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+.link {
+    text-decoration: none;
+    color: var(--main-white);
+    font-weight: 700;
+}
+.link:hover{
+    color: var(--main-green)
+}
+
