@@ -8,10 +8,9 @@ export const apiSlice = createApi({
       query: (value) => `/search?search=${value}`,
     }),
     detail: builder.query({
-      query: (body) => ({
-        url: `/detail`,
+      query: ({ type, name }) => ({
+        url: `/detail/${type}/${name}`,
         method: "POST",
-        body,
       }),
     }),
   }),
