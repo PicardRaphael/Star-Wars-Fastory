@@ -9,7 +9,10 @@ import { Link } from "react-router-dom";
 
 const ResultItem = ({ index, data, style }) => (
   <ListItem component="div" key={index} className={styles.item} style={style}>
-    <Link className={styles.link} to={`/detail/${data[index].name}`}>
+    <Link
+      className={styles.link}
+      to={{ pathname: `/detail/${data[index].name}`, query: data[index] }}
+    >
       <ListItemText className={styles.text}>{data[index].name}</ListItemText>
     </Link>
   </ListItem>
