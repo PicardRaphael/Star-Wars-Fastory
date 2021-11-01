@@ -1,37 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { v4 as uuidv4 } from "uuid";
 import CssCircularProgress from "../../../components/CssCircularProgress";
 import styles from "./Detail.module.css";
 
-const People = React.lazy(() =>
-  import("../../../containers/Detail/PeopleContainer")
-);
-const Film = React.lazy(() =>
-  import("../../../containers/Detail/FilmContainer")
-);
-const Planet = React.lazy(() =>
-  import("../../../containers/Detail/PlanetContainer")
-);
-const Species = React.lazy(() =>
-  import("../../../containers/Detail/SpeciesContainer")
-);
-const Starship = React.lazy(() =>
-  import("../../../containers/Detail/StarshipContainer")
-);
-const Vehicle = React.lazy(() =>
-  import("../../../containers/Detail/VehicleContainer")
-);
-const Detail = ({ loading, result, type }) => {
-  const types = {
-    people: People,
-    films: Film,
-    planets: Planet,
-    species: Species,
-    starships: Starship,
-    vehicles: Vehicle,
-  };
+const Detail = ({ loading, result, type, types }) => {
   const Component = types[type];
   return (
     <Box>
@@ -53,6 +29,13 @@ const Detail = ({ loading, result, type }) => {
       )}
     </Box>
   );
+};
+
+Detail.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  result: PropTypes.arrayOf(PropTypes.object.isRequired),
+  type: PropTypes.string.isRequired,
+  types: PropTypes.object.isRequired,
 };
 
 export default Detail;
