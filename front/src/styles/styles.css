@@ -28,5 +28,5 @@ p, h6 {
 }
 
 .active {
-  color: var(--main-blue)
+  color: var(--main-blue) !important
 }
