@@ -13,7 +13,7 @@ const InputSearch = ({ searchValue, setSearchValue }) => (
       <SearchIcon className={styles.logo} />
       <InputBase
         className={styles.input}
-        placeholder="Chercher…"
+        placeholder="Search..."
         value={searchValue}
         onChange={(evt) => setSearchValue(evt.target.value)}
       />
