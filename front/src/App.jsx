@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route } from "react-router-dom";
 import CssCircularProgress from "./components/CssCircularProgress";
-import Header from "./components/Header";
 import "./styles/styles.css";
 import "./styles/colors.css";
 
@@ -18,12 +17,7 @@ const App = ({ routes }) => (
             const Component = React.lazy(() =>
               import(`./views/containers/${route.component}Container`)
             );
-            return (
-              <>
-                <Header />
-                <Component {...props} />
-              </>
-            );
+            return <Component {...props} />;
           }}
         />
       ))}

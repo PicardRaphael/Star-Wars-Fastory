@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { FixedSizeList } from "react-window";
@@ -11,7 +12,7 @@ const Search = ({ searchValue, setSearchValue, loading, result }) => {
   return (
     <Box className={styles.searchGlobal}>
       <Typography variant="h6" margin={2}>
-        Rechercher dans toute la base de l'empire
+        Search the entire base of the empire
       </Typography>
       <Box className={styles.divInput}>
         <InputSearch
@@ -23,12 +24,12 @@ const Search = ({ searchValue, setSearchValue, loading, result }) => {
         {loading && <CssCircularProgress className={styles.toto} />}
         {result === null && !loading && (
           <Typography className={styles.text}>
-            La base de l'Empire vous attends !
+            The base of the Empire is waiting for you!
           </Typography>
         )}
         {result !== null && result.length === 0 && (
           <Typography className={styles.text}>
-            Nous n'avons rien trouvé dans la base de l'Empire !
+            We found nothing in the Empire's base!
           </Typography>
         )}
         {result !== null && result.length > 0 && (
@@ -48,4 +49,10 @@ const Search = ({ searchValue, setSearchValue, loading, result }) => {
   );
 };
 
+Search.propTypes = {
+  searchValue: PropTypes.string.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  result: PropTypes.arrayOf(PropTypes.object.isRequired),
+};
 export default Search;

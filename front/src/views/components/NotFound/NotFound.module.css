@@ -1,0 +1,26 @@
+
+
+.notFound {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    width: 100%;
+}
+
+.notFoundImage {
+    display: flex;
+    align-items: center;
+}
+
+.number {
+    font-size: 350px;
+    color: var(--main-notFound);
+}
+
+.notFound p{
+    color: var(--main-notFound);
+    font-size: 35px;
+}
+.try{
+    font-weight: 700;
+}

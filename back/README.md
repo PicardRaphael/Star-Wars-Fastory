@@ -17,7 +17,17 @@ All endpoints start with `http://STAR_WARS_API_HOST:STAR_WARS_API_PORT`
 | Url | Parameter/Query | Type | Required |Description |
 | :-----| :--- | :--- | :--- |:---- |
 | `/search`| `?search=` | `string` | true | Allows you to search anywhere on the empire's database |
+|  `/detail/{type}/{name}`| `type` `name` | `string` `string` | true | Allows you to retrieve detailed information from a [type](#type) and a name |
 
+
+## Type
+
+* films
+* people
+* planets
+* species
+* starships
+* vehicles
 
 ## Status Codes
 

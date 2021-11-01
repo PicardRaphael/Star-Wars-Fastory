@@ -9,7 +9,10 @@ import { Link } from "react-router-dom";
 
 const ResultItem = ({ index, data, style }) => (
   <ListItem component="div" key={index} className={styles.item} style={style}>
-    <Link className={styles.link} to={`/details/${data[index].name}`}>
+    <Link
+      className={styles.link}
+      to={`/detail/${data[index].type}/${data[index].name}`}
+    >
       <ListItemText className={styles.text}>{data[index].name}</ListItemText>
     </Link>
   </ListItem>
@@ -19,6 +22,7 @@ ResultItem.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
   index: PropTypes.number.isRequired,
